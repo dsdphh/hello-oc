@@ -1,4 +1,5 @@
-FROM nginx
+FROM nginxinc/nginx-unprivileged
+#FROM nginx
 
 #MAINTAINER 
 
