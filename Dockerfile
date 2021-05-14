@@ -16,5 +16,8 @@ ADD default.conf "${NGINX_CONFIGURATION_PATH}"
 COPY ./html/index.html /opt/app-root/src/html
 COPY ./html/index.html .
 
+RUN chgrp -R 0 /opt/app-root/src/html && \
+    chmod -R g=u /opt/app-root/src/html
+
 # Run script uses standard ways to run the application
 CMD nginx -g "daemon off;"
